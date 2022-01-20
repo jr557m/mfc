@@ -1,0 +1,96 @@
+body{
+    background-color: #f08085;
+    
+}
+
+.search-form{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    margin: 0 auto;
+}
+
+.heading{
+        margin:20px auto;
+        padding:12px;
+        width:580px;
+        word-break:break-all;
+        text-align: center;
+        margin-top: 12%;
+        font-weight: bolder;
+        font-size: 35px;
+        
+}
+.headingInfo{
+    margin:20px auto;
+    padding:12px;
+    width:580px;
+    text-align: center;
+    margin-top: 2%;
+    border-bottom: 2px solid #000000;
+
+}
+.headingInfo:hover {
+    opacity: 0.80;
+}
+
+
+.autocomplete-item {
+    padding: 10px;
+    padding-left: 24px;
+    cursor: pointer;
+    background-color: #F7CAC9;
+    color: #575756;
+    border-bottom: 1px solid #575756;
+}
+.autocomplete-items {
+    position: absolute;
+    z-index: 99;
+    /* расположите элементы автозаполнения так, чтобы они имели ту же ширину, что и контейнер: */
+    top: 100%;
+    left: 0;
+    right: 0;
+    
+    padding-right: 0px;
+    width: 100%;
+}
+
+.search-btn{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    height: 47px;
+    width: 40%;
+    font-size: 17px;
+    opacity: 1;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    line-height: 46px;
+}
+.search-btn:hover {
+    opacity: 0.80;
+}
+.search-field{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    width: 380%;
+    height: 44px;
+    display: block;
+}
+.mapAndText{
+    width:1700px;
+    display: flex;
+}
+.graphicWork{
+    margin-top: 2%;
+    margin-left: 1000px;
+} 
+.map{
+    width:200px;
+}
