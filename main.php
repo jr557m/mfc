@@ -39,7 +39,8 @@ $content1 ='
                     <input type="password" name="password" />
                     <button class = "btn" type="submit">Войти</button>
                     </form>
-                    <form method="POST" class = "search-form" action = "signup.php">
+                    <form method="POST" class = "search-form" action = "signup.php"> 
+                        <form method="POST" class = "search-form" action = "signup.php">
                     <button class = "btn" href="signup.php" >Регистрация</button>
                     </form>
                 <?php endif;?>

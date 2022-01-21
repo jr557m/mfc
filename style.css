@@ -1,8 +1,45 @@
 body{
     background-color: #f08085;
-    
+    margin: 0;
+    display: table;
+    min-height: 100vh;
+    width: 100%;
 }
-
+main {
+    display: table-row;
+    /* Чтобы ряд занимал всё оставшееся пространство, так как табличная разметка не позволит ему вытолкнуть header и footer */
+    height: 100%;
+}
+  
+footer {
+    background-color: black;
+    color: white;
+    height: 55px;
+    font-size: 15px;
+    opacity: 1;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    line-height: 30px;
+  }
+.forfooter{
+    text-align: right;
+}
+.footer2{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.white{
+    color: white;
+}
+.tableds {
+    border: 3px solid grey;
+    font-size: 18px;
+}
+/* td {
+    border: 1px solid grey;
+} */
 .search-form{
     
     display: flex;
@@ -165,4 +202,19 @@ body{
     border-bottom: 1px solid #575756;
     
     
+}
+.left {
+    float: left;
+    text-align: left;
+    margin-right: auto;
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.container3 {
+    display: flex;
+    margin: 0;
 }
