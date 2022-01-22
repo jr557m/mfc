@@ -3,8 +3,14 @@ require("session.php");
 require("connectdb.php");
 $title = "МФЦ";
 $content1 = '';
+
 $result1 = mysqli_query($connect, "SELECT * FROM mfc WHERE global_id = '".$_POST["id"]."' ");
 while($mfc1 = mysqli_fetch_assoc($result1)){
+    $in = $mfc1['geodata_center'];
+    preg_match_all('/\[(.+?)\]/', $in, $out);
+    $out = trim($out[0][0], "[");
+    $out = trim($out, "]");
+    $coords = explode (",", $out);
 $content1 .= '
 <table>
     <tr>
@@ -24,13 +30,25 @@ $content1 .= '
             <td>'.$mfc1['Address'].'</td>
         </tr>
         </table>
-        
-<p>'.$mfc1['PublicPhone'].'</p>
-';    
-}  
-// $content1.= '
-// <iframe src="https://maps.google.com/?saddr=Current+Location&daddr=43.12345,-76.12345" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-// ';         
-
+        <div id="yandexmap" style="width: 500px; height: 500px"></div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script>
+        var map;
+        var marker;
+        function initMap () {
+            map = new ymaps.Map("yandexmap", {
+                center: ["'.$coords[1].'","'.$coords[0].'"],
+                zoom: 16
+            });
+            marker = new ymaps.Placemark(["'.$coords[1].'","'.$coords[0].'"], {
+                hintContent: "Местоположение",
+                balloonContent: "'.$mfc1['CommonName'].'"
+                });
+              map.geoObjects.add(marker);
+        }
+        ymaps.ready(initMap);
+        </script>
+';  
+}   
 require("template.php");
 ?>
