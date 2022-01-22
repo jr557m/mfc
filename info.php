@@ -20,7 +20,7 @@ while($mfc = mysqli_fetch_assoc($result)){
     <table>
     <tr>
             <td>          </td>
-            <td>'.$mfc['CommonName'].'</td>
+            <td class = "bolder">'.$mfc['CommonName'].'</td>
         </tr>
         <tr>
             <td class = "bolder">Округ</td>

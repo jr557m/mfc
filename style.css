@@ -16,19 +16,22 @@ footer {
     color: white;
     height: 55px;
     font-size: 15px;
-    opacity: 1;
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     text-align: left;
     display: block;
-    line-height: 30px;
+    flex: 0 0 50px;
+    
   }
 .forfooter{
     text-align: right;
 }
 .footer2{
     margin-top: 0;
-    margin-bottom: 0;
+
+}
+.footer2 a {
+    margin-top: 50px;
 }
 .white{
     color: white;
@@ -63,6 +66,16 @@ footer {
         word-break:break-all;
         text-align: center;
         margin-top: 12%;
+        font-weight: bolder;
+        font-size: 35px;
+        
+}
+.headingmfc{
+        margin:20px auto;
+        padding:12px;
+        width:580px;
+        word-break:break-all;
+        text-align: center;
         font-weight: bolder;
         font-size: 35px;
         
@@ -207,14 +220,49 @@ footer {
     float: left;
     text-align: left;
     margin-right: auto;
+    position: relative;
+
+}
+.left1 {
+
+    text-align: center;
+    position: relative;
+
+
 }
 
 .right {
-    float: right;
     text-align: right;
+    float: right;
+    position: relative;
+
+}
+.right1 {
+    float: center;
+    text-align: center;
+    position: relative;
+
+}
+.right2 {
+    float: center;
+    text-align: right;
+    position: relative;
+
 }
 
 .container3 {
     display: flex;
     margin: 0;
+    height: 55px;
+    display: flex;
+    position: relative;
+
+}
+.container4 {
+    display: flex;
+    margin: 0;
+    height: 55px;
+    display: flex;
+    position: relative;
+
 }

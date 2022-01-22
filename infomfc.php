@@ -10,27 +10,14 @@ while($mfc1 = mysqli_fetch_assoc($result1)){
     preg_match_all('/\[(.+?)\]/', $in, $out);
     $out = trim($out[0][0], "[");
     $out = trim($out, "]");
-    $coords = explode (",", $out);
+    $coords = explode(",", $out);
+    $hours = explode("\n", $mfc1['WorkingHours']);
 $content1 .= '
-<table>
-    <tr>
-            <td>          </td>
-            <td>'.$mfc1['CommonName'].'</td>
-        </tr>
-        <tr>
-            <td>Округ</td>
-            <td>'.$mfc1['AdmArea'].'</td>
-        </tr>
-        <tr>
-            <td>Район</td>
-            <td>'.$mfc1['District'].'</td>
-        </tr>
-        <tr>
-            <td>Адрес</td>
-            <td>'.$mfc1['Address'].'</td>
-        </tr>
-        </table>
-        <div id="yandexmap" style="width: 500px; height: 500px"></div>
+
+<h1 class = "headingmfc">'.$mfc1['ShortName'].'</h1>
+<div class = "container4">
+<div class = "left footer2">
+<div id="yandexmap" style="width: 545px; height: 545px"></div>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
         <script>
         var map;
@@ -38,17 +25,93 @@ $content1 .= '
         function initMap () {
             map = new ymaps.Map("yandexmap", {
                 center: ["'.$coords[1].'","'.$coords[0].'"],
-                zoom: 16
+                zoom: 15
             });
             marker = new ymaps.Placemark(["'.$coords[1].'","'.$coords[0].'"], {
                 hintContent: "Местоположение",
-                balloonContent: "'.$mfc1['CommonName'].'"
+                balloonContent: "'.$mfc1['ShortName'].'"
                 });
               map.geoObjects.add(marker);
         }
         ymaps.ready(initMap);
         </script>
+</div>
+                <div class = "container4 ">
+                <div class = "left1 footer2">
+                <p class = "bolder" >График Работы:</p>
+                <p>'.$hours[0].'</p>
+                <p>'.$hours[1].'</p>
+                <p>'.$hours[2].'</p>
+                <p>'.$hours[3].'</p>
+                <p>'.$hours[4].'</p>
+                <p>'.$hours[5].'</p>
+                <p>'.$hours[6].'</p>
+                <p>'.$hours[7].'</p>
+                <p>'.$hours[8].'</p>
+                <p>'.$hours[9].'</p>
+                <p>'.$hours[10].'</p>
+                <p>'.$hours[11].'</p>
+                <p>'.$hours[12].'</p>
+                <p>'.$hours[13].'</p>
+                </div>
+                <div class = "right1 footer2">
+                <p class = "bolder" >Возможные услуги:</p>  
+                <p>'.$mfc1['ExtraServices'].'</p>
+                <br>
+                <br>
+                <h1 class = "bolder">Дополнительные сведения</h1>
+                <p class = "bolder" >'.$mfc1['ChiefPosition'].'</p>  
+                <p>'.$mfc1['ChiefName'].'</p>
+
+                <p class = "bolder" >Дата открытия:</p>  
+                <p>'.$mfc1['OpenDate'].'</p>
+                
+                <p class = "bolder">Площадь</p>  
+                <p>'.$mfc1['CenterArea'].'</p>
+                <br>
+                
+                
+                </div>
+                </div>
+                
+                <div class = "right1 footer2">
+                <p class = "bolder" >Полное официальное наименование:</p>  
+                <p>'.$mfc1['FullName'].'</p>
+
+                <p class = "bolder" >Сокращенное официальное наименование:</p>  
+                <p>'.$mfc1['ShortName'].'</p>
+                
+                <p class = "bolder">Административный округ: </p>  
+                <p>'.$mfc1['AdmArea'].'</p>
+                
+                <p class = "bolder">Район: </p> 
+                <p>'.$mfc1['District'].'</p> 
+                
+                <p class = "bolder">Адрес учреждения: </p> 
+                <p>'.$mfc1['Address'].'</p>
+                
+                <p class = "bolder">Сайт: </p>
+                <a href = "www.md.mos.ru">'.$mfc1['WebSite'].'</a>
+                
+                    <p class = "bolder">Контактный телефон: </p>
+                    <p>'.$mfc1['PublicPhone'].'</p>
+                
+                <p class = "bolder">Кол-во окон:</p>
+                <p>'.$mfc1['WindowCount'].'</p> 
+                 
+            </div>
+            <p>'.$mfc1['ClarificationOfWorkingHours'].'</p>
+         </div> 
+        
+                
+           
+        
 ';  
-}   
+}  
+?>
+<form method="POST" class = "search-form1" action = "info.php">
+    <button class = "btn footer2" href = "info.php">Вернуться к списку МФЦ</button>
+</form>  
+<?php    
 require("template.php");
 ?>
