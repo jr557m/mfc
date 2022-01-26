@@ -13,7 +13,7 @@ while($mfc1 = mysqli_fetch_assoc($result1)){
     $coords = explode(",", $out);
     $hours = explode("\n", $mfc1['WorkingHours']);
 $content1 .= '
-<form method="POST"  action = "info.php">
+<form method="POST"  action = "choose.php">
     <input hidden value= "'.$_POST["distric"].'" type="text" name="district">
     <button class = "btn">Вернуться к списку МФЦ</button>
 </form>

@@ -7,7 +7,7 @@ $content1 ='
                 информацию о нем, в том числе доступность для инвалидов</p>
             </div>
             <div class="search-form">
-                <form action="info.php" method="POST" class="search-form">
+                <form action="choose.php" method="POST" class="search-form">
                     <input type="text" name="district" class="search-field" placeholder="Введите ваш район...">
                     <button class="search-btn" >Показать</button>
                 </form>

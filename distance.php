@@ -4,7 +4,7 @@ require("session.php");
 $result = mysqli_query($connect, "SELECT * FROM distance ORDER BY ID ASC");
 
 $content1 = '
-<form  action = "info.php" method = "POST" class = "seacrh-form">
+<form  action = "choose.php" method = "POST" class = "seacrh-form">
     <input hidden value="'.$_POST["distric"].'" type="text" name="district">
     <button class="btn">Вернуться к списку мфц</button>
 </form>';
