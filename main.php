@@ -3,8 +3,8 @@ $title = "Поиск МФЦ";
 $content1 ='
 
             <div class="heading">
-                <p>Узнать ближайшее доступное МФЦ и полную 
-                информацию о нем, в том числе доступность для инвалидов</p>
+                <p>Узнать доступные в районе МФЦ и полную 
+                информацию о нем</p>
             </div>
             <div class="search-form">
                 <form action="choose.php" method="POST" class="search-form">
