@@ -94,7 +94,7 @@ $content1 .= '
                 <p>'.$mfc1['Address'].'</p>
                 
                 <p class = "bolder">Сайт: </p>
-                <a href = "www.md.mos.ru">'.$mfc1['WebSite'].'</a>
+                <a href = "https://www.mos.ru">'.$mfc1['WebSite'].'</a>
                 
                     <p class = "bolder">Контактный телефон: </p>
                     <p>'.$mfc1['PublicPhone'].'</p>
