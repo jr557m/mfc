@@ -18,7 +18,7 @@ while($dist = mysqli_fetch_assoc($result)){
         </tr>
         <tr>
             <td class = "bolder">Сcылка на сайт</td>
-            <td><a href = '.$dist['WebSite'].'>'.$dist['WebSite'].'</a></td>
+            <td><a href = "https://www.mos.ru/pgu/ru/services/procedure/0/0/7700000010000180715/?onsite_from=61532>">'.$dist['WebSite'].'</a></td>
         </tr>
         <br>
         <br>
