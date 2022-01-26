@@ -13,7 +13,10 @@ while($mfc1 = mysqli_fetch_assoc($result1)){
     $coords = explode(",", $out);
     $hours = explode("\n", $mfc1['WorkingHours']);
 $content1 .= '
-
+<form method="POST"  action = "info.php">
+    <input hidden value= "'.$_POST["distric"].'" type="text" name="district">
+    <button class = "btn">Вернуться к списку МФЦ</button>
+</form>
 <h1 class = "headingmfc">'.$mfc1['ShortName'].'</h1>
 <div class = "container4">
 <div class = "left footer2">
@@ -70,7 +73,7 @@ $content1 .= '
                 <p>'.$mfc1['CenterArea'].'</p>
                 <br>
                 
-                
+                <p>'.$mfc1['ClarificationOfWorkingHours'].'</p>
                 </div>
                 </div>
                 
@@ -98,20 +101,17 @@ $content1 .= '
                 
                 <p class = "bolder">Кол-во окон:</p>
                 <p>'.$mfc1['WindowCount'].'</p> 
-                 
+            </div> 
             </div>
-            <p>'.$mfc1['ClarificationOfWorkingHours'].'</p>
-         </div> 
-        
-                
-           
-        
+            
+            
+            
 ';  
 }  
 ?>
-<form method="POST" class = "search-form1" action = "info.php">
-    <button class = "btn footer2" href = "info.php">Вернуться к списку МФЦ</button>
-</form>  
-<?php    
+
+  
+<?php  
+
 require("template.php");
 ?>

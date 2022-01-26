@@ -8,7 +8,7 @@ $content1 ='
             </div>
             <div class="search-form">
                 <form action="info.php" method="POST" class="search-form">
-                    <input type="text" name="login" class="search-field" placeholder="Введите ваш район...">
+                    <input type="text" name="district" class="search-field" placeholder="Введите ваш район...">
                     <button class="search-btn" >Показать</button>
                 </form>
                 
@@ -48,14 +48,8 @@ $content1 ='
 
     <?php if(isset($session_user) && $session_user != ""):?> 
             <h1 class = "fortext">Вы авторизированы, вам доступна вся информация и все возможности сайта</h1>
-            <!-- <form action="gyms.php" method = "POST">
-                <input type="text" id="district" name = "district" placeholder = "Введите ваш район" class = "form-control w-50 p-3 container-fluid text-center mt-3"><br>
-                <input type="submit" value = "Отправить" class = "btn btn-success">
-            </form> -->
     <?php else:?> 
         <h1 class = "fortext">Если вам необходимы все функции сайта - авторизируйтесь</h1>
-        <!-- <p class = " text-danger container-fluid text-center">Чтобы воспользоваться поиском, авторизуйтесь!</p>
-        <input type="text" name = "district" placeholder = "Введите ваш район" class = "form-control w-50 p-3 container-fluid text-center mt-3"><br> -->
     <?php endif;?>
 
 <?php

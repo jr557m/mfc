@@ -25,7 +25,7 @@
             <div class = "container3 ">
                 <div class = "left footer2">
                     <?php echo date('d.m.Y H:i:s') . '<br>';?> 
-                    <br><a class = "footer2" >©Данный сайт придуман и разработан Меняйловым И.Д.</a> 
+                    <br><a class = "footer2" >©Данный сайт придуман и разработан Меняйловым И.Д. группа 201-362</a> 
                 </div>
                 <div class = "right footer2">
                     imeego5@gmail.com <br>
@@ -34,7 +34,7 @@
              </div>  
         <?php else:?>
             <div> 
-                <?php echo date('d.m.Y H:i:s') . '<br>';?> 
+                <?php echo date('d.m.Y H:i:s') . '<br>';?> <br>
                 ©Данный сайт придуман и разработан Меняйловым И.Д.
             </div>
         <?php endif;?>
